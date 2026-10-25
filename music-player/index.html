@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Violet Vibes Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="audio" controls>
+    <source src="songs/song1.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+</audio>
+
+    <main class="music-player">
+        <header class="header">
+            <div class="logo">♫</div>
+            <div>
+                <h1>Violet Vibes</h1>
+                <p>Your music, your mood.</p>
+            </div>
+        </header>
+
+        <section class="now-playing">
+            <div class="album-art" id="albumArt">
+                <span>♫</span>
+            </div>
+
+            <p class="label">NOW PLAYING</p>
+            <h2 id="songTitle">How You Like That</h2>
+            <p id="artistName">BLACKPINK</p>
+
+            <audio id="audio"></audio>
+
+            <div class="progress-container">
+                <input type="range" id="progress"
+                    min="0" max="100" value="0">
+                <div class="time">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="prevBtn" aria-label="Previous song">|◀</button>
+                <button id="playBtn" class="play-btn"
+                    aria-label="Play">▶</button>
+                <button id="nextBtn" aria-label="Next song">▶|</button>
+            </div>
+
+            <div class="volume-box">
+                <button id="muteBtn" aria-label="Mute">♫</button>
+                <input type="range" id="volume"
+                    min="0" max="1" step="0.01" value="0.7">
+                <span id="volumeValue">100%</span>
+            </div>
+
+            <div class="options">
+                <label>
+                    <input type="checkbox" id="autoplay" checked>
+                    Autoplay next
+                </label>
+                <button id="repeatBtn" class="small-btn"
+                    aria-pressed="false">↻ Repeat: Off</button>
+            </div>
+
+            <p id="status" class="status" aria-live="polite">
+                Select a song to start listening.
+            </p>
+        </section>
+
+        <section class="playlist-section">
+            <div class="playlist-heading">
+                <h2>My Playlist</h2>
+                <span id="songCount">8 tracks</span>
+            </div>
+
+            <div id="playlist" class="playlist"></div>
+        </section>
+
+        <footer>MADE FOR MUSIC LOVERS ♡</footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
